@@ -1,0 +1,78 @@
+<%- include('../partials/header') %>
+
+    <form action="/managerecords" method="post">
+        <table>
+            <tr>
+                <td>
+                    artist
+                </td>
+                <td>
+                    <input type="text" name="artist">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    title
+                </td>
+                <td>
+                    <input type="text" name="title">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    media
+                </td>
+                <td>
+                    <input type="text" name="media">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    grade
+                </td>
+                <td>
+                    <input type="text" name="grade">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    year
+                </td>
+                <td>
+                    <input type="text" name="year">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    description
+                </td>
+                <td>
+                    <input type="text" name="description">
+                </td>
+            </tr>   
+            <tr>
+                <td>
+                    price
+                </td>
+                <td>
+                    <input type="text" name="price">
+                </td>
+            </tr>                     
+            <tr>
+                <td>
+                    image
+                </td>
+                <td>
+                    <input type="text" name="image">
+                </td>
+            </tr>   
+        </table>       
+
+        <button type="submit">Save Record</button>
+    </form>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,70 @@
+<%- include('../partials/header') %>
+
+    <form action="/managerecords/<%= record.id %>?_method=PUT" method="post">
+        
+        <table>
+            <tr>
+                <td>
+                    Artist: 
+                </td>            
+                <td>
+                    <input type="text" name="artist" value="<%= record.artist %>">
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    Title: 
+                </td>
+                <td>
+                    <input type="text" name="title" value="<%= record.title %>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Media: 
+                </td>
+                <td>
+                    <input type="text" name="media" value="<%= record.media %>">
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    Grade: 
+                </td>
+                <td>
+                    <input type="text" name="grade" value="<%= record.grade %>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Year: 
+                </td>
+                <td>
+                    <input type="text" name="year" value="<%= record.year %>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Note: 
+                </td>
+                <td>
+                    <input type="text" name="description" value="<%= record.description %>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Price: 
+                </td>
+                <td>
+                    <input type="text" name="price" value="<%= record.price %>">
+                </td>
+            </tr>                
+        </table>  
+
+
+        <button type="submit">Update Record</button>
+    </form>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,52 @@
+<%- include('../partials/header') %>
+
+<table>
+    <% records.forEach(function(r) { %>
+        <tr>
+            <td>
+              <form 
+                action="/managerecords/<%= r.id %>?_method=DELETE" 
+                method="POST"
+                class="delete-form"
+                >
+                <button type="submit">Delete</button>
+              </form>
+              
+            </td>
+            <td>
+                <a href="/managerecords/<%= r.id %>">
+                    <img src="/img/<%= r.image %>" alt="" style="height: 150px; width: 150px">
+                </a>
+            </td>
+            <td>
+                <ul style="list-style-type: none;">
+                    <li>
+                        Artist: <%= r.artist %>
+                    </li>
+                    <li>
+                        Title:  <%= r.title %>
+                    </li>
+                    <li>
+                        Media:  <%= r.media %>
+                    </li>
+                    <li>
+                        Grade:  <%= r.grade %>
+                    </li>
+                    <li>
+                        Year:  <%= r.year %>
+                    </li>
+                    <li>
+                        Price:  <%= r.price %>
+                    </li>
+                    <li>
+                        Note: <%= r.description %>
+                    </li>                                                                                                                        
+                </ul>
+            </td>
+        </tr>
+      <% }); %>
+</table>
+<a href="/managerecords/new">Add New Record</a>
+
+
+<%- include('../partials/footer') %>
