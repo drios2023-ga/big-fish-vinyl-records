@@ -2,13 +2,14 @@
 const Record =  require('../models/managerecord.js');
 
 module.exports = {
-    index,
-    show,
-    new: newRecord,
-    create,
-    delete: deleteRecord,
-    edit,
-    update
+     index,
+     show,
+     new: newRecord,
+     create,
+     delete: deleteRecord,
+     edit,
+     update, 
+    uploadImage
 };
 
 async function index (req, res){
@@ -61,7 +62,8 @@ function newRecord(req, res) {
     id = req.params.id;
     console.log(req.body);
     await Record.findByIdAndUpdate( id, req.body, {new:true});
-    res.redirect(`/managerecords/${req.params.id}`);
+    //res.redirect(`/managerecords/${req.params.id}`);
+    res.redirect('/managerecords');
   }
   
   async function edit(req, res){
@@ -71,3 +73,11 @@ function newRecord(req, res) {
       record
     });
   }
+
+
+  function uploadImage(req, res) {
+
+    res.render('managerecords/upload', { errorMsg: '' });
+  }
+
+  
