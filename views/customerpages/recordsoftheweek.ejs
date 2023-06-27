@@ -7,7 +7,7 @@
     <% records.forEach(function(r) { %>
         <div class="recordsoftheweek">
             <a href="/customerpages/recordoftheweek/<%= r.id %>">
-                <img src="<%= r.image %>" alt="" style="height: 250px; width: 250px">
+                <img src="/img/<%= r.image %>" alt="" style="height: 250px; width: 250px">
             </a>
         </div>
     <% }); %>
