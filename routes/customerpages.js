@@ -11,4 +11,6 @@ router.get('/contactus', pagesCtrl.showContactUs);
 
 router.get('/test', pagesCtrl.testPage);
 
+router.get('/recordoftheweek/:id', pagesCtrl.showRecordOfTheWeek )
+
 module.exports = router;
