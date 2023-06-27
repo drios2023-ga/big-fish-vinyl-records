@@ -1,10 +1,76 @@
+/*--------------------------------------------*/
+/* Express's original body styling*/
+/*--------------------------------------------*/
 
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Caveat', cursive;
+  /*font-family: 'Lilita One', cursive;*/
+  font-size: x-large;
 }
 
 
+
+social-media{
+  text-align: center;
+  display: block;
+
+
+}
+
+
+
+
+
+
+
+
+/*--------------------------------------------*/
+/* styling for the list on the admin index page */
+/*--------------------------------------------*/
+
+.adminlist{
+  display:inline-block
+}
+
+.adminlist{
+  display:inline-block
+}
+
+
+
+/*--------------------------------------------*/
+/* styling for the "records of the week page */
+/*--------------------------------------------*/
+
+.record-container{
+  display:inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.recordoftheweek{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 50%;
+}
+
+.recordsoftheweek{
+  display:inline-block;
+  margin: 10px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------*/
+/* styling for the navigation bar */
+/*--------------------------------------------*/
 
 .topnav{
   overflow: hidden;
@@ -14,69 +80,13 @@ body {
 
 .topnav a {
   color: #7F7F7F;
-  font-family: 'Lilita One', cursive; 
+  /*font-family: 'Lilita One', cursive; */
+  font-family: 'Caveat', cursive;
   font-size: x-large; 
   color: #7F7F7F;
   text-decoration: none;
 }
 
-/* .mobile-container {
-  max-width: 480px;
-  margin: auto;
-  background-color: #555;
-  height: 500px;
-  color: white;
-  border-radius: 10px;
-}
-
-.topnavhb {
-  overflow: hidden;
-  background-color: white;
-  position: relative;
-}
-
-.topnavhb #myLinks {
-  display: none;
-  width: 500px;
-  background-color: #CCCCCC;
-
-}
-
-.topnavhb a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
-
-.topnavhb a.icon {
-  background: #CCCCCC;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.topnavhb a:hover {
-  background-color: white;
-  color: black;
-}
-
-.active {
-  background-color: white;
-  color: white;
-} */
-
-.adminlist{
-  display:inline-block
-}
-
-
-
-
-
-/* ========== HEADER START ========== */
 header {
   z-index: 1;
   position: relative;
@@ -138,7 +148,8 @@ ul {
 .main-links {
   flex-direction: column;
   margin-bottom: 1.5rem;
-  font-family: 'Lilita One', cursive;   
+  /*font-family: 'Lilita One', cursive;  */
+  font-family: 'Caveat', cursive; 
 }
 
 .extra-links {
@@ -164,6 +175,7 @@ ul {
   justify-content: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  font-size: xx-large;
 }
 
 li > a {
@@ -172,9 +184,10 @@ li > a {
   font-size: 1.25rem;
   font-weight: 400;
 }
-/* ========== HEADER END ========== */
 
-
+/*--------------------------------------------*/
+/* media queries styling */
+/*--------------------------------------------*/
 /* media queries  */
 @media (max-width: 480px) {
   .topnav {

@@ -1,4 +1,15 @@
 <%- include('../partials/header.ejs') %>
+<div style="text-align: center;">
+    <p>Check out the best of our latest vinyl below. Click on an image for details.</p>
+</div>
 
-records of the Week
+<div class="record-container">
+    <% records.forEach(function(r) { %>
+        <div class="recordsoftheweek">
+            <a href="/customerpages/recordoftheweek/<%= r.id %>">
+                <img src="<%= r.image %>" alt="" style="height: 250px; width: 250px">
+            </a>
+        </div>
+    <% }); %>
+</div>    
 <%- include('../partials/footer.ejs') %> 

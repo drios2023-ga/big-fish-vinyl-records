@@ -1,4 +1,30 @@
 <%- include('../partials/header.ejs') %>
-contact us
+
+<script defer>
+    function processEmail(){
+      let name = document.getElementById('name');
+      let email = document.getElementById('email');
+      let message = document.getElementById('message');
+  
+      name.value = "";
+      email.value = "";
+      message.value = "";
+  
+      document.getElementById('submitmessage').innerText = "Message sent.";
+  }
+  
+  </script>
+    <form style="margin:10px">
+          <p>Name</p>
+          <input type="text" id="name" name="name" style="width:50%; display:flex;margin: 10px;">
+          <p>Email Address</p>
+          <input type="email" id="email" name="email" style="width:50%; display:flex;margin: 10px;">
+          <p>Message</p>
+          <textarea id="message" name="message" required rows="10" style="width:50%; display:flex;margin: 10px;">
+          </textarea>
+    </form>
+  
+    <button onclick="processEmail()">Submit</button>
+    <p id="submitmessage">Click submit to send your message.</p>
 
 <%- include('../partials/footer.ejs') %> 

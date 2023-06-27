@@ -1,6 +1,16 @@
 // controllers/todos.js
 const Record =  require('../models/managerecord.js');
 
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const path = require('path');
+const ejs = require('ejs');
+
+const { storage } = require('../storage/storage');
+const multer = require('multer');
+const upload = multer({ storage });
+
 module.exports = {
      index,
      show,
@@ -9,8 +19,11 @@ module.exports = {
      delete: deleteRecord,
      edit,
      update, 
-    uploadImage
+    uploadImage,
+    saveImage
 };
+
+
 
 async function index (req, res){
     const allRecords = await Record.find();
@@ -34,6 +47,8 @@ function newRecord(req, res) {
     // errorMsg if the create action fails
     res.render('managerecords/new.ejs', { errorMsg: '' });
   }
+
+
 
   async function create(req, res) {
 
@@ -74,10 +89,53 @@ function newRecord(req, res) {
     });
   }
 
+  async function uploadImage(req, res) {
 
-  function uploadImage(req, res) {
+    // const record = await Record.findById({ _id: req.params.id });
+    // res.render('managerecords/upload', {
+    //   title: 'Edit Record', 
+    //   record
 
-    res.render('managerecords/upload', { errorMsg: '' });
-  }
+  //});
+
+  res.render('managerecords/uploadimage.ejs', { errorMsg: '' });
+
+}
+
+async function saveImage(req, res){
+
+// app.post('/upload', upload.single('image'), (req, res) => {
+//     console.log(req.file);
+//     res.send('Done');
+//   });
+
+console.log('tried to save image 1');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
+
+// app.get('', (req, res) => {
+//   res.render("home");
+// });
+
+// code goes here
+ const x = await app.post('/managerecords/upload', upload.single('image'), (req, res) => {
+  console.log(req.file);
+  console.log('tried to save image 2');
+  res.send('Done');
+});
+
+// app.listen(port, () => {
+//   console.log(`Server is listening on port ${port}`);
+// });
+
+res.redirect('/managerecords');
+
+}
+
+
 
   

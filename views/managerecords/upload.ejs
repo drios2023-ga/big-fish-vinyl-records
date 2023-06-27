@@ -1,4 +1,80 @@
 <%- include('../partials/header.ejs') %>
 
-upload
+    <form action="/managerecords/<%= record.id %>?_method=PUT" method="post"></form>
+    <table>
+        <tr>
+            <td>
+                Artist: 
+            </td>            
+            <td>
+                <%= record.artist %>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Title: 
+            </td>
+            <td>
+                <%= record.title %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Media: 
+            </td>
+            <td>
+                <%= record.media %>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Grade: 
+            </td>
+            <td>
+                <%= record.grade %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                year: 
+            </td>
+            <td>
+                <%= record.year %>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Description: 
+            </td>
+            <td>
+                <%= record.description %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Price: 
+            </td>
+            <td>
+                <%= record.price %>
+            </td>
+        </tr>
+
+    </table>  
+
+
+
+    <div style="display:grid">
+        <p>Upload Image</p>
+        <input type="file" id="fileupload">
+    </div>
+
+
+    <button type="submit">Update Record</button>
+
+        
+</form>
+
 <%- include('../partials/footer.ejs') %>  

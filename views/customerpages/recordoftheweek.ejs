@@ -1,14 +1,12 @@
 <%- include('../partials/header.ejs') %>
-
-
-
+    
     <div>
-        <div>
-            <a href="/managerecords/<%= record.id %>">
-                <img src="<%= record.image %>" alt="" style="height: 250px; width: 250px; margin:20px;">
+        <div class="recordoftheweek" style="text-align: center;">
+            <a href="/customerpages/recordoftheweek/<%= record.id %>">
+                <img src="<%= record.image %>" alt="" style="height: 250px; width: 250px">
             </a>
         </div>
-        <div style="text-align: left;">
+        <div style="text-align: center;">
             <ul class="adminlist">
                 <li>
                     Artist: <%= record.artist %>
@@ -33,12 +31,8 @@
                 </li>                                                                                                                        
             </ul>
         </div>
-    </div>
+    </div>    
 
-    <div style="display:grid">
-        <a style="margin:5px 0px" href="/managerecords/<%= record.id %>/edit">Edit Record</a>
-        <a style="margin:5px 0px" href="/managerecords/<%= record.id %>/upload">Upload Image</a>
-        <a style="margin:5px 0px" href="/managerecords">Back to Record List</a>
-    </div>
+
 
 <%- include('../partials/footer.ejs') %>    

@@ -7,9 +7,9 @@ var methodOverride = require('method-override');
 
 //storage variables
 //for uploading images
-// const { storage } = require('./storage/storage');
-// const multer = require('multer');
-// const upload = multer({ storage });
+const { storage } = require('./storage/storage');
+const multer = require('multer');
+const upload = multer({ storage });
 
 require('dotenv').config();
 require('./config/database');
@@ -43,10 +43,10 @@ app.use('/customerpages', manageCustomerPagesRouter);
 
 //we used upload.single to tell "multer" to upload
 // only single image 
-// app.post('/upload', upload.single('image'), (req, res) => {
-//     console.log(req.file);
-//     res.send('Done');
-//   });
+app.post('/upload', upload.single('image'), (req, res) => {
+    console.log(req.file);
+    res.send('Done');
+  });
 
 
 // // catch 404 and forward to error handler
