@@ -10,7 +10,6 @@
                 <%= record.artist %>
             </td>
         </tr>
-
         <tr>
             <td>
                 Title: 
@@ -67,14 +66,12 @@
 
 
     <div style="display:grid">
-        <p>Upload Image</p>
         <input type="file" id="fileupload">
     </div>
-
-
-    <button type="submit">Update Record</button>
-
-        
+    <button type="submit">Submit</button><br>        
 </form>
+
+<a class="adminlinks" href="/managerecords/<%= record.id %>">Back to Record</a>
+
 
 <%- include('../partials/footer.ejs') %>  

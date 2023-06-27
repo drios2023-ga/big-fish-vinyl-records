@@ -13,7 +13,7 @@ recordsCtrl = require('../controllers/managerecords');
  router.post('/uploadimage', recordsCtrl.saveImage);
 
 //GET /upload
-//router.get('/:id/upload', recordsCtrl.uploadImage);
+router.get('/:id/upload', recordsCtrl.uploadImage);
 
 //GET /records/new <-- this will need to be moved
  router.get('/new', recordsCtrl.new);
@@ -25,7 +25,7 @@ recordsCtrl = require('../controllers/managerecords');
   router.delete('/:id',recordsCtrl.delete);
 
 // //GET /records/:id/edit
-  router.get('/:id/edit', recordsCtrl.edit) 
+  router.get('/:id/edit', recordsCtrl.edit); 
 
 // //PUT /records/:id
   router.put('/:id', recordsCtrl.update);

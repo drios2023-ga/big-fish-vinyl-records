@@ -91,14 +91,14 @@ function newRecord(req, res) {
 
   async function uploadImage(req, res) {
 
-    // const record = await Record.findById({ _id: req.params.id });
-    // res.render('managerecords/upload', {
-    //   title: 'Edit Record', 
-    //   record
+    const record = await Record.findById({ _id: req.params.id });
+    res.render('managerecords/upload', {
+      title: 'Edit Record', 
+      record
 
-  //});
+  });
 
-  res.render('managerecords/uploadimage.ejs', { errorMsg: '' });
+  res.render('managerecords/upload.ejs', { errorMsg: '' });
 
 }
 

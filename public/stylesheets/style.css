@@ -69,6 +69,18 @@ social-media{
 }
 
 /*--------------------------------------------*/
+/* styling for the admin links */
+/*--------------------------------------------*/
+
+.adminlinks{
+  margin:5px 0px;
+  text-decoration: none;
+  color: #7F7F7F;
+}
+
+
+
+/*--------------------------------------------*/
 /* styling for the navigation bar */
 /*--------------------------------------------*/
 
