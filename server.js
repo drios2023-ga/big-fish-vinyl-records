@@ -15,7 +15,6 @@ require('dotenv').config();
 require('./config/database');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var manageRecordsRouter = require('./routes/managerecords');
 var manageCustomerPagesRouter = require('./routes/customerpages');
 
@@ -37,7 +36,6 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/managerecords', manageRecordsRouter);
-app.use('/users', usersRouter);
 app.use('/customerpages', manageCustomerPagesRouter);
 
 

@@ -1,4 +1,5 @@
-const Record =  require('../models/managerecord.js');
+
+
 
 module.exports={
     showAboutUs,
@@ -34,4 +35,6 @@ function showContactUs(req, res){
 function testPage(req, res){
     res.render('customerpages/test');
 }
+
+
 
