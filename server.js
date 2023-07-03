@@ -5,12 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
 
-//storage variables
-//for uploading images
-const { storage } = require('./storage/storage');
-const multer = require('multer');
-const upload = multer({ storage });
-
 require('dotenv').config();
 require('./config/database');
 
@@ -24,28 +18,19 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/img', express.static('img'));
+//app.use('/img', express.static('img'));
 
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/managerecords', manageRecordsRouter);
 app.use('/customerpages', manageCustomerPagesRouter);
-
-
-//we used upload.single to tell "multer" to upload
-// only single image 
-app.post('/upload', upload.single('image'), (req, res) => {
-    console.log(req.file);
-    res.send('Done');
-  });
-
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

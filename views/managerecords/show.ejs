@@ -5,7 +5,7 @@
     <div>
         <div>
             <a href="/managerecords/<%= record.id %>">
-                <img src="/img/<%= record.image %>" alt="" style="height: 250px; width: 250px; margin:20px;">
+                <img src="<%= record.image %>" alt="" style="height: 250px; width: 250px; margin:20px;">
             </a>
         </div>
         <div style="text-align: left;">
@@ -30,14 +30,16 @@
                 </li>
                 <li>
                     Note: <%= record.description %>
-                </li>                                                                                                                        
+                </li>
+                <li>
+                    Image:  <%= record.image %>
+                </li>                                                                                                                                        
             </ul>
         </div>
     </div>
 
     <div style="display:grid">
         <a class="adminlinks" href="/managerecords/<%= record.id %>/edit">Edit Record</a>
-        <a class="adminlinks" href="/managerecords/<%= record.id %>/upload">Upload Image</a>
         <a class="adminlinks" href="/managerecords">Back to Record List</a>
     </div>
 

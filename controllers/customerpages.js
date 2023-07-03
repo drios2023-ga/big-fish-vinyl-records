@@ -1,5 +1,5 @@
 
-
+const Record =  require('../models/managerecord.js');
 
 module.exports={
     showAboutUs,
@@ -15,6 +15,7 @@ function showAboutUs(req, res){
 
 async function showRecordsOfTheWeek(req, res){
     const allRecords = await Record.find();
+    console.log(allRecords);
     res.render("customerpages/recordsoftheweek",{
         records: allRecords
     });

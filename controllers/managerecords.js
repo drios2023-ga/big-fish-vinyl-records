@@ -1,15 +1,9 @@
 // controllers/todos.js
 const Record =  require('../models/managerecord.js');
+const Photo =  require('../models/photo.js');
+const cloudinary = require("../config/cloudinary");
 
-require('dotenv').config();
-const express = require('express');
-const app = express();
-const path = require('path');
-const ejs = require('ejs');
-
-const { storage } = require('../storage/storage');
-const multer = require('multer');
-const upload = multer({ storage });
+ require('dotenv').config();
 
 module.exports = {
      index,
@@ -18,9 +12,7 @@ module.exports = {
      create,
      delete: deleteRecord,
      edit,
-     update, 
-    uploadImage,
-    saveImage
+     update
 };
 
 
@@ -37,31 +29,55 @@ async function show(req, res) {
     // Delete the document by its _id
     //await Book.findById({ _id: req.params.id });
     res.render('managerecords/show',{
-      record:await Record.findById({ _id: req.params.id }),
+      record:await Record.findById(req.params.id),
       title: 'Record Details'
     });
   }
 
-function newRecord(req, res) {
+async function newRecord(req, res) {
     // We'll want to be able to render an
     // errorMsg if the create action fails
-    res.render('managerecords/new.ejs', { errorMsg: '' });
+    //const photos = await Photo.find({});
+
+    res.render('managerecords/new.ejs');
   }
 
 
 
   async function create(req, res) {
 
-    try {
-      await Record.create(req.body);
-      // Always redirect after CRUDing data
 
+    console.log(req.body, req.file)
+    try {
+      // Upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+      // Create new user
+      // let photo = new Photo({
+      //   photoUrl: result.secure_url,
+      // });
+
+      
+      req.body.image = result.secure_url;
+      await Record.create(req.body);
+      console.log(req.body);
+
+      // save user details in mongodb
+      //await photo.save();
       res.redirect('/managerecords');
     } catch (err) {
-      // Typically some sort of validation error
       console.log(err);
-      res.render('managerecords/new', { errorMsg: err.message });
     }
+
+    // try {
+    //   await Record.create(req.body);
+    //   // Always redirect after CRUDing data
+
+    //   res.redirect('/managerecords');
+    // } catch (err) {
+    //   // Typically some sort of validation error
+    //   console.log(err);
+    //   res.render('managerecords/new', { errorMsg: err.message });
+    // }
 
   }  
 
@@ -88,54 +104,3 @@ function newRecord(req, res) {
       record
     });
   }
-
-  async function uploadImage(req, res) {
-
-    const record = await Record.findById({ _id: req.params.id });
-    res.render('managerecords/upload', {
-      title: 'Edit Record', 
-      record
-
-  });
-
-  res.render('managerecords/upload.ejs', { errorMsg: '' });
-
-}
-
-async function saveImage(req, res){
-
-// app.post('/upload', upload.single('image'), (req, res) => {
-//     console.log(req.file);
-//     res.send('Done');
-//   });
-
-console.log('tried to save image 1');
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, './views'));
-
-// app.get('', (req, res) => {
-//   res.render("home");
-// });
-
-// code goes here
- const x = await app.post('/managerecords/upload', upload.single('image'), (req, res) => {
-  console.log(req.file);
-  console.log('tried to save image 2');
-  res.send('Done');
-});
-
-// app.listen(port, () => {
-//   console.log(`Server is listening on port ${port}`);
-// });
-
-res.redirect('/managerecords');
-
-}
-
-
-
-  

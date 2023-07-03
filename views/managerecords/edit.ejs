@@ -60,11 +60,19 @@
                 <td>
                     <input type="text" name="price" value="<%= record.price %>">
                 </td>
-            </tr>                
+            </tr>
+            <tr>
+                <td>
+                    Image: 
+                </td>
+                <td>
+                    <input type="text" name="image" value="<%= record.image %>">
+                </td>
+            </tr>                              
         </table>  
+        <input type="file" id="fileupload">
 
-
-        <button type="submit">Update Record</button>
+        <br><button type="submit">Update Record</button>
     </form>
 
     <a class="adminlinks" href="/managerecords/<%= record.id %>">Back to Record</a>

@@ -1,81 +1,75 @@
 <%- include('../partials/header') %>
 
-    <form action="/managerecords" method="post">
-        <table>
-            <tr>
-                <td>
-                    artist
-                </td>
-                <td>
-                    <input type="text" name="artist">
-                </td>
-            </tr>
+<form action="/managerecords" method="POST" enctype="multipart/form-data">
 
-            <tr>
-                <td>
-                    title
-                </td>
-                <td>
-                    <input type="text" name="title">
-                </td>
-            </tr>
+    <table>
+        <tr>
+            <td>
+                artist
+            </td>
+            <td>
+                <input type="text" name="artist">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    media
-                </td>
-                <td>
-                    <input type="text" name="media">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                title
+            </td>
+            <td>
+                <input type="text" name="title">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    grade
-                </td>
-                <td>
-                    <input type="text" name="grade">
-                </td>
-            </tr>
+        <tr>
+            <td>
+                media
+            </td>
+            <td>
+                <input type="text" name="media">
+            </td>
+        </tr>
 
-            <tr>
-                <td>
-                    year
-                </td>
-                <td>
-                    <input type="text" name="year">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    description
-                </td>
-                <td>
-                    <input type="text" name="description">
-                </td>
-            </tr>   
-            <tr>
-                <td>
-                    price
-                </td>
-                <td>
-                    <input type="text" name="price">
-                </td>
-            </tr>                     
-            <tr>
-                <td>
-                    image
-                </td>
-                <td>
-                    <input type="text" name="image">
-                </td>
-            </tr>   
-        </table>       
+        <tr>
+            <td>
+                grade
+            </td>
+            <td>
+                <input type="text" name="grade">
+            </td>
+        </tr>
 
-        <button type="submit">Save Record</button>
-    </form>
+        <tr>
+            <td>
+                year
+            </td>
+            <td>
+                <input type="text" name="year">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                description
+            </td>
+            <td>
+                <input type="text" name="description">
+            </td>
+        </tr>   
+        <tr>
+            <td>
+                price
+            </td>
+            <td>
+                <input type="text" name="price">
+            </td>
+        </tr>                     
+    </table>
+
+    <input type="file" name="photo" accept="image/png, image/jpeg" />
+    <button type="submit">Submit</button>
+</form>
+  <h1 id="message"></h1>
 
     <a class="adminlinks" href="/managerecords">Back to Record List</a>
-
 
 <%- include('../partials/footer') %>
