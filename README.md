@@ -3,7 +3,7 @@
 This is a website for a record store that will be reopening in 2024. It allows the owner to post “Records of the Week” that can be promoted on Instagram and Facebook. It features a model-view-controller (MVC) architecture and  demonstrates full CRUD capability as well as responsive design. Technologies used include HTML, CSS, Express, MongoDB, and Cloudinary (for the photo upload).
 
 Click the link below to view the website.
-https://github.com/drios2023-ga/big-fish-vinyl-records/assets/133999998/40db4dba-ca6f-4757-a8d3-7e2da38258021
+https://tranquil-bayou-66193-41ac0301ffca.herokuapp.com/
 
 ## Website Design
 This website was designed with a "mobile-first" approach and is viewable on any device (computer, table, mobile phone). It features full CRUD capability and a model-view-controller architecture. 
