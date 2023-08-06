@@ -28,3 +28,6 @@ Future changes included adding secure authentication to protect the Admin page.
 ### Adding a new album
 
 ![image](https://github.com/drios2023-ga/big-fish-vinyl-records/assets/133999998/ddb76a42-ddda-4020-9bb3-cc59438c7c67)
+
+### Starting the app
+cd into folder, then npm start
